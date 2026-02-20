@@ -6,6 +6,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import { BudgetProvider } from "./contexts/BudgetContext";
 const baseUrlAPI = "https://fakestoreapi.com/";
 
 export default function App() {
@@ -20,18 +21,20 @@ export default function App() {
   useEffect(fetchData, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route Component={DefaultLayout}>
-          <Route index Component={HomePage} />
-          <Route path="/about" Component={AboutPage} />
-          <Route
-            path="/products"
-            Component={() => <ProductPage products={getData} />}
-          />
-          <Route path="/products/:id" element={<ProductDetailPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <BudgetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route Component={DefaultLayout}>
+            <Route index Component={HomePage} />
+            <Route path="/about" Component={AboutPage} />
+            <Route
+              path="/products"
+              Component={() => <ProductPage products={getData} />}
+            />
+            <Route path="/products/:id" element={<ProductDetailPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </BudgetProvider>
   );
 }
