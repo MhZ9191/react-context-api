@@ -25,8 +25,8 @@ export default function Header() {
             </div>
             <button onClick={changeBudget} className="btn-budget">
               {budgetMode
-                ? "Attiva Modalità Budget"
-                : "Disattiva Modalità Budget"}
+                ? "Disattiva Modalità Budget"
+                : "Attiva Modalità Budget"}
             </button>
           </div>
         </section>
