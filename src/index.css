@@ -114,6 +114,22 @@ img {
   color: black;
 }
 
+.div-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-budget {
+  padding: 15px;
+  cursor: pointer;
+  background-color: rgb(163, 216, 163);
+  outline: none;
+  border: 2px green solid;
+  border-radius: 16px;
+  color: green;
+}
+
 @media screen and (min-width: 678px) {
   .bi {
     display: none;
